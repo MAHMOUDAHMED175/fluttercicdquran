@@ -4,10 +4,13 @@ on:
   push:
     branches:
       - main
+      - publishtofirebase
 
   pull_request:
     branches:
       - main
+      - publishtofirebase
+
 #w
 env:
   GITHUB_TOKEN: ${{ secrets.MY_PAT }}
@@ -37,6 +40,7 @@ jobs:
       - name: Run Our Test
         run: flutter test
 
+#asdfasdf
       - name: Build APK
         run: flutter build apk --release
       - name: Download Artifact
@@ -46,3 +50,11 @@ jobs:
         with:
           name: release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
+
+      - name: Upload artifact to Firebase App Distribution
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
+        with:
+          appId: ${{secrets.APP_ID}}
+          serviceCredentialsFileContent: ${{secrets.GOOGLE_CREDINTIONAL}}
+          groups: testers
+          file: build/app/outputs/flutter-apk/app-release.apk
