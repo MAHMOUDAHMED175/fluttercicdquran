@@ -1,5 +1,5 @@
 buildscript {
-    val kotlin_version: String by extra("1.9.24")
+    val kotlin_version: String by extra("1.9.0")
     repositories {
         google()
         mavenCentral()
@@ -30,7 +30,7 @@ plugins {
     // ...
 
     // Add the dependency for the Google services Gradle plugin
-    id("org.jetbrains.kotlin.android") version "1.9.24" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.0" apply false
     id("com.google.gms.google-services") version "4.4.2" apply false
 
 
