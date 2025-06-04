@@ -15,6 +15,7 @@ class ArabicSuraNumber extends StatelessWidget {
         fontSize: 20,
         shadows: [
           Shadow(
+            //kjghg
             //ik
             offset: Offset(.5, .5),
             blurRadius: 1.0,
