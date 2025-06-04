@@ -23,3 +23,4 @@ class ArabicSuraNumber extends StatelessWidget {
         ]),);
   }
 }
+//asdf

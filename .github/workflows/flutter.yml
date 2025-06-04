@@ -45,5 +45,5 @@ jobs:
           FIREBASE_APP_ID: ${{secrets.APP_ID}}
           FIREBASE_CLI_TOKEN: ${{secrets.FIREBASE_CLI_TOKEN}}
         run:
-          cd fastlane
+          cd android
           fastlane deploy_to_firebase 
