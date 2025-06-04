@@ -5,11 +5,13 @@ on:
     branches:
       - main
       - publishtofirebase
+      - fastlane
 
   pull_request:
     branches:
       - main
       - publishtofirebase
+      - fastlane
 
 #w
 env:
