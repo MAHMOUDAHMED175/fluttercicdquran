@@ -20,11 +20,11 @@ platform :android do
   sh "flutter build apk"
   lane :deploy_to_firebase do
     firebase_app_distribution(
-      app: ENV["APP_ID"],
+      app: "1:700948813141:android:6fd4ff05ed2e0aad560bdc",
       groups: "testers",
       release_notes: "this fastlane build",
       # =>firebase login:ci
-      firebase_cli_token:ENV["FIREBASE_CLI_TOKEN"],
+      firebase_cli_token:"1//03t5dosv1EBdaCgYIARAAGAMSNwF-L9IraiIWf4yuWUAMiLk9eHV3BDRgR1i9BZR8QxkexW3ksWJBXpyJs_uTm2ddFnGgKR8nW-4",
       android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
       android_artifact_type: "APK",
       debug: true
