@@ -4,10 +4,13 @@ on:
   push:
     branches:
       - main
+      - publishtofirebase
 
   pull_request:
     branches:
       - main
+      - publishtofirebase
+
 #w
 env:
   GITHUB_TOKEN: ${{ secrets.MY_PAT }}
@@ -37,12 +40,10 @@ jobs:
       - name: Run Our Test
         run: flutter test
 
-      - name: Build APK
-        run: flutter build apk --release
-      - name: Download Artifact
-        uses: actions/download-artifact@v4 # UPDATE HERE
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
+      - name: deploy to firebse via fastlane
+        env:
+          FIREBASE_APP_ID: ${{secrets.APP_ID}}
+          FIREBASE_CLI_TOKEN: ${{secrets.FIREBASE_CLI_TOKEN}}
+        run:
+          cd fastlane
+          fastlane deploy_to_firebase 
