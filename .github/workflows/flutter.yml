@@ -42,10 +42,11 @@ jobs:
       - name: Install Fastlane
         run: sudo gem install fastlane
 
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3.6"
+          ruby-version: "3.4.3"
           bundler-cache: true
           working-directory: android
 
@@ -54,7 +55,7 @@ jobs:
         working-directory: android
 
         env:
-          FIREBASE_APP_ID: ${{ secrets.APP_ID }}
+          FIREBASE_APP_ID: ${{secrets.APP_ID }}
           FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
 
         run: |
