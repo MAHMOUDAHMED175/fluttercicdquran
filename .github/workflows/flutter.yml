@@ -42,11 +42,10 @@ jobs:
       - name: Install Fastlane
         run: sudo gem install fastlane
 
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.4.3"
+          ruby-version: "3.4.0"
           bundler-cache: true
           working-directory: android
 
