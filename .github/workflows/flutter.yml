@@ -42,8 +42,8 @@ jobs:
 
       - name: deploy to firebse via fastlane
         env:
-          FIREBASE_APP_ID: ${{secrets.APP_ID}}
-          FIREBASE_CLI_TOKEN: ${{secrets.FIREBASE_CLI_TOKEN}}
+          FIREBASE_APP_ID: '1:700948813141:android:6fd4ff05ed2e0aad560bdc'
+          FIREBASE_CLI_TOKEN: '1//03t5dosv1EBdaCgYIARAAGAMSNwF-L9IraiIWf4yuWUAMiLk9eHV3BDRgR1i9BZR8QxkexW3ksWJBXpyJs_uTm2ddFnGgKR8nW-4'
         run:
-          cd fastlane
+          cd android
           fastlane deploy_to_firebase 
